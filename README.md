@@ -1,4 +1,4 @@
-## Unit 19 Homework: Cryptocurrency Wallet
+## Cryptocurrency Wallet
 
 ![alt=""](Images/19-4-challenge-image.png)
 
