@@ -118,4 +118,12 @@ Now it's time to put it all together and test the KryptoJobs2Go application with
 
 ---
 
+## Summary
+
+![alt=""](Images/Screenshot1.jpg)
+![alt=""](Images/Screenshot2.jpg)
+![alt=""](Images/Screenshot3.jpg)
+
+---
+
 © 2021 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
