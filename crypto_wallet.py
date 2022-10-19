@@ -10,7 +10,6 @@
 import os
 import requests
 from dotenv import load_dotenv
-
 load_dotenv()
 from bip44 import Wallet
 from web3 import Account

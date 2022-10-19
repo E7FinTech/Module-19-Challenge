@@ -34,6 +34,7 @@ w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 ################################################################################
 # Step 1:
 # Import Ethereum Transaction Functions into the KryptoJobs2Go Application
+from web3 import Web3, EthereumTesterProvider
 
 # In this section, you'll import several functions from the `crypto_wallet.py`
 # script into the file `krypto_jobs.py`, which contains code for Fintech
@@ -59,10 +60,13 @@ w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 # * `get_balance`
 # * `send_transaction`
 
+
+
 # 4. Within the Streamlit sidebar section of code, create a variable named
 # `account`. Set this variable equal to a call on the `generate_account`
 # function. This function will create the KryptoJobs2Go customer’s (in this
 # case, your) HD wallet and Ethereum account.
+
 
 # 5. Within this same section of the `krypto_jobs.py` file, define a
 # new `st.sidebar.write` function that will display the balance of the
@@ -81,6 +85,8 @@ w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
 # From `crypto_wallet.py import the functions generate_account, get_balance,
 #  and send_transaction
 # YOUR CODE HERE
+from crypto_wallet import generate_account, get_balance, send_transaction
+
 
 ################################################################################
 # KryptoJobs2Go Candidate Information
@@ -148,6 +154,8 @@ st.text(" \n")
 
 st.sidebar.markdown("## Client Account Address and Ethernet Balance in Ether")
 
+
+
 ##########################################
 # Step 1 - Part 4:
 # Create a variable named `account`. Set this variable equal to a call on the
@@ -157,11 +165,9 @@ st.sidebar.markdown("## Client Account Address and Ethernet Balance in Ether")
 # @TODO:
 #  Call the `generate_account` function and save it as the variable `account`
 # YOUR CODE HERE
-
+account = generate_account()
 ##########################################
 
-# Write the client's Ethereum account address to the sidebar
-st.sidebar.write(account.address)
 
 ##########################################
 # Step 1 - Part 5:
@@ -169,10 +175,13 @@ st.sidebar.write(account.address)
 # customer’s account. Inside this function, call the `get_balance` function and
 #  pass it your Ethereum `account.address`.
 
+
 # @TODO
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
 # YOUR CODE HERE
+get_balance = account.address
+st.sidebar.write(account.address)
 
 ##########################################
 
@@ -264,10 +273,14 @@ st.sidebar.markdown("## Total Wage in Ether")
 # rate from the candidate database (`candidate_database[person][3]`) by the
 # value of the `hours` variable
 # YOUR CODE HERE
+wage=candidate_database[person][3]* hourly_rate * hours 
+
+
 
 # @TODO
 # Write the `wage` calculation to the Streamlit sidebar
 # YOUR CODE HERE
+st.sidebar.write(wage)
 
 ##########################################
 # Step 2 - Part 2:
@@ -296,6 +309,15 @@ if st.sidebar.button("Send Transaction"):
     # Save the returned transaction hash as a variable named `transaction_hash`
     # YOUR CODE HERE
 
+    transaction_hash = w3.eth.send_transaction({
+    'account', 
+    'candidate_address', 
+    'wage'
+})
+
+    
+    
+    
     # Markdown for the transaction hash
     st.sidebar.markdown("#### Validated Transaction Hash")
 
