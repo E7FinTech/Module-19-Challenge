@@ -181,7 +181,7 @@ account = generate_account()
 # Write the returned ether balance to the sidebar
 # YOUR CODE HERE
 get_balance = account.address
-st.sidebar.write(account.address)
+st.sidebar.write(get_balance)
 
 ##########################################
 
@@ -212,7 +212,6 @@ candidate_address = candidate_database[person][1]
 st.sidebar.write(candidate_address)
 
 # Write the KryptoJobs2Go candidate's name to the sidebar
-
 st.sidebar.markdown("## Total Wage in Ether")
 
 ################################################################################
@@ -309,10 +308,10 @@ if st.sidebar.button("Send Transaction"):
     # Save the returned transaction hash as a variable named `transaction_hash`
     # YOUR CODE HERE
 
-    transaction_hash = w3.eth.send_transaction({
-    'account', 
-    'candidate_address', 
-    'wage'
+    transaction_hash = send_transaction({
+        'to': candidate_address,
+        'account': account.address,
+        'value': wage,
 })
 
     

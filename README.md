@@ -120,8 +120,11 @@ Now it's time to put it all together and test the KryptoJobs2Go application with
 
 ## Summary
 
+`Candidates`:
 ![alt=""](Images/Screenshot1.jpg)
 ![alt=""](Images/Screenshot2.jpg)
+
+`Hired Jo For 8 hrs':
 ![alt=""](Images/Screenshot3.jpg)
 
 ---
