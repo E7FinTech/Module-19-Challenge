@@ -180,8 +180,7 @@ account = generate_account()
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
 # YOUR CODE HERE
-get_balance = account.address
-st.sidebar.write(get_balance)
+st.sidebar.write(get_balance(account.address))
 
 ##########################################
 
@@ -308,11 +307,7 @@ if st.sidebar.button("Send Transaction"):
     # Save the returned transaction hash as a variable named `transaction_hash`
     # YOUR CODE HERE
 
-    transaction_hash = send_transaction({
-        'to': candidate_address,
-        'account': account.address,
-        'value': wage,
-})
+    transaction_hash=send_transaction(w3, account,candidate_address,wage)
 
     
     
